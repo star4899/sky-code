@@ -3,6 +3,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+<<<<<<< HEAD
 module.exports = (env, option) => {
 	const config = {
 		mode : option.mode,
@@ -14,6 +15,14 @@ module.exports = (env, option) => {
 			filename : "[name].js",
 			library : "skycode",
 			libraryTarget : "umd"
+=======
+module.exports = () => {
+	const config = {
+		entry : "./src/index.js",
+		output : {
+			path : path.resolve(__dirname + "/dist"),
+			filename : "skyCode.js"
+>>>>>>> 557758511cf1922949408b36940cf19a4544780b
 		},
 		module : {
 			rules : [
@@ -29,6 +38,7 @@ module.exports = (env, option) => {
 				}
 			]
 		},
+<<<<<<< HEAD
 		externals: {
 			skyCode : "skycode"
 		}
@@ -42,6 +52,22 @@ module.exports = (env, option) => {
 			}),
 			new webpack.HotModuleReplacementPlugin()
 		]
+=======
+		plugins: [
+			new HtmlWebpackPlugin({
+				template : "./index.html",
+				filename : "./index.html",
+				inject : true
+			}),
+			new webpack.HotModuleReplacementPlugin()
+		],
+		optimization: {
+		},
+		resolve : {
+			alias : {
+			}
+		}
+>>>>>>> 557758511cf1922949408b36940cf19a4544780b
 	};
 	return config;
 };

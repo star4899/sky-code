@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
 <title>Sky-Code</title>
 <style>
 *{padding:0; margin:0;}
@@ -30,6 +31,35 @@
 <body>
 <div class="code-box">
 <div>
+=======
+<title>Document</title>
+<style>
+*{padding:0; margin:0;}
+.code_box{overflow:hidden; margin:20px 0; color:#333;}
+.code_box > pre{overflow-x:auto; overflow-y:hidden; padding:10px 30px 10px 70px; background:#eee; border-left:5px solid #3f87a6; counter-reset:skycode;}
+.code_box code{font-family:Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;}
+.code_box code > p{position:relative; color:#333;}
+.code_box code > p::before{position:absolute; left:-70px; top:0; width:40px; padding-right:10px; border-right:1px solid #999; text-align:right; color:#999; counter-increment:skycode; content:counter(skycode);}
+.code_box code .skycode_comment{color:#708090;}
+.code_box code .skycode_punctuation{color:#999;}
+.code_box code .skycode_operator{color:#a67f59;}
+.code_box code .skycode_doc{color:#ccc;}
+.code_box code .skycode_tag_name{color:#905;}
+.code_box code .skycode_attr_name{color:#690;}
+.code_box code .skycode_attr_value{color:#07a;}
+.code_box code .skycode_keyword, .code_box code .skycode_boolean{color:#07a;}
+.code_box code .skycode_function{color:#dd4a68;}
+.code_box code .skycode_string{color:#690;}
+.code_box code .skycode_string .skycode_number{color:#690;}
+.code_box code .skycode_number{color:#905;}
+</style>
+</head>
+<body>
+
+
+<div class="code_box box">
+<pre>
+>>>>>>> 557758511cf1922949408b36940cf19a4544780b
 <code>
 <p>module.exports = {</p>
 <p style="padding-left: 20px;">// comment</p>
@@ -79,6 +109,7 @@
 <p>1 || 1</p>
 <p>1 | 1</p>
 <p>() => {}</p>
+<<<<<<< HEAD
 <p>/* 1111</p>
 <p>var a = 2222;</p>
 <p>var a = 3333; */</p>
@@ -113,5 +144,12 @@
 <script>
 var s = new skyCode(".code-box");
 </script>
+=======
+
+</code>
+</pre>
+</div>
+
+>>>>>>> 557758511cf1922949408b36940cf19a4544780b
 </body>
 </html>
