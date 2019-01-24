@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sky-Code</title>
+<style>
+*{padding:0; margin:0;}
+.code-box{overflow:hidden; margin:20px 0; color:#333;}
+.code-box > div{overflow-x:auto; overflow-y:hidden; padding:10px 30px 10px 70px; background:#eee; border-left:5px solid #3f87a6; counter-reset:skycode;}
+.code-box code{font-family:Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;}
+.code-box code > p{position:relative; color:#333; line-height:180%;}
+.code-box code > p::before{position:absolute; left:-70px; top:0; width:40px; padding-right:10px; border-right:1px solid #999; text-align:right; color:#999; counter-increment:skycode; content:counter(skycode);}
+.code-box code .skycode_comment{color:#708090;}
+.code-box code .skycode_punctuation{color:#999;}
+.code-box code .skycode_operator{color:#a67f59;}
+.code-box code .skycode_doc{color:#ccc;}
+.code-box code .skycode_tag_name{color:#905;}
+.code-box code .skycode_attr_name{color:#690;}
+.code-box code .skycode_attr_value{color:#07a;}
+.code-box code .skycode_keyword, .code-box code .skycode_boolean{color:#07a;}
+.code-box code .skycode_function{color:#dd4a68;}
+.code-box code .skycode_string{color:#690;}
+.code-box code .skycode_string .skycode_number{color:#690;}
+.code-box code .skycode_number{color:#905;}
+</style>
+</head>
+
+<body>
+<div class="code-box">
+<div>
+<code>
+<p>module.exports = {</p>
+<p style="padding-left: 20px;">// comment</p>
+<p style="padding-left: 20px;">mode : String,</p>
+<p style="padding-left: 20px;">context : String,</p>
+<p style="padding-left: 20px;">entry : String, Array, Object,</p>
+<p style="padding-left: 20px;">output : Object,</p>
+<p style="padding-left: 20px;">module : Object,</p>
+<p style="padding-left: 20px;">plugin : Array,</p>
+<p style="padding-left: 20px;">optimization : Object,</p>
+<p style="padding-left: 20px;">resolve : Object,</p>
+<p style="padding-left: 20px;">devServer : Object</p>
+<p>};</p>
+<p>function(){</p>
+<p style="padding-left: 20px;">if(true){</p>
+<p style="padding-left: 20px;">};</p>
+<p style="padding-left: 20px;">return false;</p>
+<p>};</p>
+<p>return abc();</p>
+<p>var abc = 1;</p>
+<p>var abc = "1";</p>
+<p>const abc = 1;</p>
+<p>const abc = "1";</p>
+<p>let abc = 1;</p>
+<p>let abc = "1";</p>
+<p>let abc = class abc {</p>
+<p style="padding-left: 20px;">constructor(height, width) {</p>
+<p style="padding-left: 40px;">this.height = height;</p>
+<p style="padding-left: 40px;">this.width = width;</p>
+<p style="padding-left: 40px;">console.log(this)</p>
+<p style="padding-left: 40px;">console.log(thisIsName)</p>
+<p style="padding-left: 20px;">};</p>
+<p>};</p>
+<p>1 === 1</p>
+<p>1 == 1</p>
+<p>a = 1</p>
+<p>1 + 1</p>
+<p>1 - 1</p>
+<p>1++</p>
+<p>++1</p>
+<p>1--</p>
+<p>--1</p>
+<p>1 >= 1</p>
+<p>1 <= 1</p>
+<p>1 && 1</p>
+<p>1 & 1</p>
+<p>1 || 1</p>
+<p>1 | 1</p>
+<p>() => {}</p>
+<p>/* 1111</p>
+<p>var a = 2222;</p>
+<p>var a = 3333; */</p>
+<p>var a = 4444;</p>
+<p>function(a,s,d){</p>
+<p style="padding-left: 20px;">var a = 123;</p>
+<p style="padding-left: 20px;">let a = [];</p>
+<p style="padding-left: 20px;">const a = {}</p>
+<p>};</p>
+<p>if(1 > 2){</p>
+<p style="padding-left: 20px;">console.log(123)</p>
+<p>};</p>
+<p>var a = "1234123" */</p>
+<p>1 >= 1</p>
+<p>1 <= 1</p>
+<p>1 && 1</p>
+<p>1 & 1</p>
+<p>1 || 1</p>
+<p>1 | 1</p>
+<p>() => {}</p>
+<p>var a = 1234; /*</p>
+<p>var a = 1;</p>
+<p>var a = "1";</p>
+<p>var a = [];</p>
+<p>var a = {};</p>
+<p>*/var a = 1;</p>
+</code>
+</div>
+</div>
+
+<script src="./skycode.js"></script>
+<script>
+var s = new skyCode(".code-box");
+</script>
+</body>
+</html>
