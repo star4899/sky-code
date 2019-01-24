@@ -1,6 +1,5 @@
 # sky-code
 
-<<<<<<< HEAD
 블로그[(blog.skydown.co.kr)](https://blog.skydown.co.kr) 에서 사용하고 있는 Code Syntax Highlighter 2.0.0 입니다.
 
 
@@ -41,20 +40,3 @@
 
 *
 *
-=======
-
-* skydown (star4899@naver.com / blog.skydown.co.kr)
-* version : 1.0.0
-
-
-## Build
-
-```
-// dev server
-$npm run dev
-
-// build
-$npm run build
-```
-
->>>>>>> 557758511cf1922949408b36940cf19a4544780b
