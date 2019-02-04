@@ -3,12 +3,9 @@
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
-  "engines" : {
-
-  },
+  "engines": {},
   "dependencies": {},
   "devDependencies": {
-    "html-webpack-plugin": "^3.2.0",
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.1",
     "@babel/polyfill": "^7.0.0",
@@ -16,15 +13,17 @@
     "@babel/preset-stage-2": "^7.0.0",
     "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.2",
+    "expose-loader": "^0.7.5",
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.28.4",
-    "webpack-dev-server": "^3.1.14",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
     "build": "webpack --mode production --progress --hide-modules",
     "dev": "webpack-dev-server --mode development --progress --open"
   },
-  "email" : "star4899@naver.com",
+  "email": "star4899@naver.com",
   "author": "skydown (blog.skydown.co.kr)",
   "license": "MIT"
 }

@@ -6,13 +6,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = (env, option) => {
 	const config = {
 		mode : option.mode,
-		entry : {
-			skycode : ["./src/index.js"]
-		},
+		entry : ["@babel/polyfill", "./src/index.js"],
 		output : {
 			path : path.resolve(__dirname + "/dist"),
-			filename : "[name].js",
-			library : "skycode",
+			filename : "skycode.js",
+			library : "skyCode",
 			libraryTarget : "umd"
 		},
 		module : {
