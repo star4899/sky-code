@@ -28,86 +28,104 @@
 </head>
 
 <body>
-<div class="code-box">
-<div>
-<code>
-<p>module.exports = {</p>
-<p style="padding-left: 20px;">// comment</p>
-<p style="padding-left: 20px;">mode : String,</p>
-<p style="padding-left: 20px;">context : String,</p>
-<p style="padding-left: 20px;">entry : String, Array, Object,</p>
-<p style="padding-left: 20px;">output : Object,</p>
-<p style="padding-left: 20px;">module : Object,</p>
-<p style="padding-left: 20px;">plugin : Array,</p>
-<p style="padding-left: 20px;">optimization : Object,</p>
-<p style="padding-left: 20px;">resolve : Object,</p>
-<p style="padding-left: 20px;">devServer : Object</p>
-<p>};</p>
-<p>function(){</p>
-<p style="padding-left: 20px;">if(true){</p>
-<p style="padding-left: 20px;">};</p>
-<p style="padding-left: 20px;">return false;</p>
-<p>};</p>
-<p>return abc();</p>
-<p>var abc = 1;</p>
-<p>var abc = "1";</p>
-<p>const abc = 1;</p>
-<p>const abc = "1";</p>
-<p>let abc = 1;</p>
-<p>let abc = "1";</p>
-<p>let abc = class abc {</p>
-<p style="padding-left: 20px;">constructor(height, width) {</p>
-<p style="padding-left: 40px;">this.height = height;</p>
-<p style="padding-left: 40px;">this.width = width;</p>
-<p style="padding-left: 40px;">console.log(this)</p>
-<p style="padding-left: 40px;">console.log(thisIsName)</p>
-<p style="padding-left: 20px;">};</p>
-<p>};</p>
-<p>1 === 1</p>
-<p>1 == 1</p>
-<p>a = 1</p>
-<p>1 + 1</p>
-<p>1 - 1</p>
-<p>1++</p>
-<p>++1</p>
-<p>1--</p>
-<p>--1</p>
-<p>1 >= 1</p>
-<p>1 <= 1</p>
-<p>1 && 1</p>
-<p>1 & 1</p>
-<p>1 || 1</p>
-<p>1 | 1</p>
-<p>() => {}</p>
-<p>/* 1111</p>
-<p>var a = 2222;</p>
-<p>var a = 3333; */</p>
-<p>var a = 4444;</p>
-<p>function(a,s,d){</p>
-<p style="padding-left: 20px;">var a = 123;</p>
-<p style="padding-left: 20px;">let a = [];</p>
-<p style="padding-left: 20px;">const a = {}</p>
-<p>};</p>
-<p>if(1 > 2){</p>
-<p style="padding-left: 20px;">console.log(123)</p>
-<p>};</p>
-<p>var a = "1234123" */</p>
-<p>1 >= 1</p>
-<p>1 <= 1</p>
-<p>1 && 1</p>
-<p>1 & 1</p>
-<p>1 || 1</p>
-<p>1 | 1</p>
-<p>() => {}</p>
-<p>var a = 1234; /*</p>
-<p>var a = 1;</p>
-<p>var a = "1";</p>
-<p>var a = [];</p>
-<p>var a = {};</p>
-<p>*/var a = 1;</p>
-</code>
-</div>
-</div>
+	<!-- html -->
+	<div class="code-box box">
+		<div>
+			<code>
+				<p>&lt;!-- user component--&gt;</p>
+				<p>&lt;div id="user"&gt;</p>
+				<p style="padding-left: 20px;">&lt;h1&gt;User&lt;/h1&gt;</p>
+				<p style="padding-left: 20px;">&lt;router-view&gt;<span style="font-size: 14px;">&lt;/router-view&gt;</span></p>
+				<p>&lt;/div&gt;</p>
+				<p><br></p>
+				<p>&lt;!-- profile component --&gt;</p><p>&lt;div id="profile"&gt;</p>
+				<p style="padding-left: 20px;">&lt;h2&gt;Profile&lt;/h2&gt;</p>
+				<p style="padding-left: 20px;">&lt;router-view&gt;&lt;/router-view&gt;</p>
+				<p>&lt;/div&gt;</p>
+			</code>
+		</div>
+	</div>
+	<!-- js -->
+	<div class="code-box">
+		<div>
+			<code>
+				<p>module.exports = {</p>
+				<p style="padding-left: 20px;">// comment</p>
+				<p style="padding-left: 20px;">mode : String,</p>
+				<p style="padding-left: 20px;">context : String,</p>
+				<p style="padding-left: 20px;">entry : String, Array, Object,</p>
+				<p style="padding-left: 20px;">output : Object,</p>
+				<p style="padding-left: 20px;">module : Object,</p>
+				<p style="padding-left: 20px;">plugin : Array,</p>
+				<p style="padding-left: 20px;">optimization : Object,</p>
+				<p style="padding-left: 20px;">resolve : Object,</p>
+				<p style="padding-left: 20px;">devServer : Object</p>
+				<p>};</p>
+				<p>function(){</p>
+				<p style="padding-left: 20px;">if(true){</p>
+				<p style="padding-left: 20px;">};</p>
+				<p style="padding-left: 20px;">return false;</p>
+				<p>};</p>
+				<p>return abc();</p>
+				<p>var abc = 1;</p>
+				<p>var abc = "1";</p>
+				<p>const abc = 1;</p>
+				<p>const abc = "1";</p>
+				<p>let abc = 1;</p>
+				<p>let abc = "1";</p>
+				<p>let abc = class abc {</p>
+				<p style="padding-left: 20px;">constructor(height, width) {</p>
+				<p style="padding-left: 40px;">this.height = height;</p>
+				<p style="padding-left: 40px;">this.width = width;</p>
+				<p style="padding-left: 40px;">console.log(this)</p>
+				<p style="padding-left: 40px;">console.log(thisIsName)</p>
+				<p style="padding-left: 20px;">};</p>
+				<p>};</p>
+				<p>1 === 1</p>
+				<p>1 == 1</p>
+				<p>a = 1</p>
+				<p>1 + 1</p>
+				<p>1 - 1</p>
+				<p>1++</p>
+				<p>++1</p>
+				<p>1--</p>
+				<p>--1</p>
+				<p>1 >= 1</p>
+				<p>1 <= 1</p>
+				<p>1 && 1</p>
+				<p>1 & 1</p>
+				<p>1 || 1</p>
+				<p>1 | 1</p>
+				<p>() => {}</p>
+				<p>/* 1111</p>
+				<p>var a = 2222;</p>
+				<p>var a = 3333; */</p>
+				<p>var a = 4444;</p>
+				<p>function(a,s,d){</p>
+				<p style="padding-left: 20px;">var a = 123;</p>
+				<p style="padding-left: 20px;">let a = [];</p>
+				<p style="padding-left: 20px;">const a = {}</p>
+				<p>};</p>
+				<p>if(1 > 2){</p>
+				<p style="padding-left: 20px;">console.log(123)</p>
+				<p>};</p>
+				<p>var a = "1234123" */</p>
+				<p>1 >= 1</p>
+				<p>1 <= 1</p>
+				<p>1 && 1</p>
+				<p>1 & 1</p>
+				<p>1 || 1</p>
+				<p>1 | 1</p>
+				<p>() => {}</p>
+				<p>var a = 1234; /*</p>
+				<p>var a = 1;</p>
+				<p>var a = "1";</p>
+				<p>var a = [];</p>
+				<p>var a = {};</p>
+				<p>*/var a = 1;</p>
+			</code>
+		</div>
+	</div>
 
 <script src="./skycode.js"></script>
 <script>

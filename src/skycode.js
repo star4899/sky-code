@@ -11,7 +11,6 @@ class SkyCode{
 		this.replaceItem = null;
 		this.parserJS = new ParserJS().replaceCode;
 		this.parser(document);
-		
 	};
 	parser(d){
 		d.querySelectorAll(this.select).forEach((item, index, array) => {
