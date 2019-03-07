@@ -1,6 +1,20 @@
 # sky-code
 
-블로그[(blog.skydown.co.kr)](https://blog.skydown.co.kr) 에서 사용하고 있는 Code Syntax Highlighter 2.0.0 입니다.
+skycode 는 블로그[(blog.skydown.co.kr)](https://blog.skydown.co.kr) 에서 사용하고 있는 Code Syntax Highlighter 입니다.
+
+***
+
+## 정보
+
+* skycode v2.0.0
+	* node v10.15.0
+	* npm v6.8.0
+	* webpack v4.28.4
+	* babel v7.x
+* browser support
+	* ie9+
+	* ms edge
+	* chrome
 
 ***
 
@@ -21,9 +35,11 @@ $npm run build
 
 ***
 
-### 구조
+### 적용
 
 *HTML*
+
+* ```selectTag``` > ```pre``` > ```code``` > ```p``` 순의 ```html``` 이 구성이 필요합니다.
 
 ```html
 <div class="code-box">
@@ -56,7 +72,6 @@ var syntxHighlighter = new skyCode(".code-box", {
 
 ```html``` *language*
 
-* ```selectTag``` > ```pre``` > ```code``` > ```p``` 순의 ```html``` 이 구성이 필요합니다.
 * ```pre``` 태그의 ```data-language``` 속성으로 언어를 설정 할 수 있습니다.
 * ```html```, ```css```, ```js``` 설정이 가능합니다. (v1.0)
 * 설정하지 않을 경우 ```js``` 로 기본 설정 됩니다.
@@ -70,3 +85,4 @@ var syntxHighlighter = new skyCode(".code-box", {
 * ```classPrefix```
 	* ```style``` 적용을 위한 ```class``` 의 접두사를 설정 할 수 있습니다.
 	* 기본 접두사는 ```skycode``` 로 설정 되어 있습니다.
+	* 적용되는 ```class``` 는 접두사와 추가 ```class``` 사이에는 하이픈(-)으로 구분 됩니다.

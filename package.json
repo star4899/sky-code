@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "syntax highlighter",
   "main": "index.js",
+  "browserslist" : [
+    "ie >= 9",
+    "last 1 version"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.0.0",
