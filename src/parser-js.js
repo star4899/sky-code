@@ -1,5 +1,52 @@
 module.exports = class ParserJS{
 	constructor(){
+		this.jsReg = [
+			{
+				type : "multiLineComment",
+				name : "skycode_comment",
+				reg : /(\/\*[^(?:\*\/)]*)|([^(?:\/\*)]*\*\/)/g
+			},
+			{
+				type : "singleLineComment",
+				name : "skycode_comment",
+				reg : /(^\/{2}.*)\n?/g
+			},
+			{
+				type : "scriptString",
+				name : "skycode_string",
+				reg : /(\"([^\"]*?)\")/g
+			},
+			{
+				type : "scriptNumber",
+				name : "skycode_number",
+				reg : /(\d+|NaN)/g
+			},
+			{
+				type : "scriptBloolean",
+				name : "skycode_boolean",
+				reg : /(true|false)\w?/g
+			},
+			{
+				type : "scriptKeyword",
+				name : "skycode_keyword",
+				reg : /(^(?:\s|\t)?var(?= )|function(?=\()|^let(?=[ ])|^const(?=[ ])|^if(?=[ ]?\()|^forEach(?=[ ]?\()|^for(?=[ ]?\()|\$(?=\(|\.)|[ ]new(?=[ ])|^return(?=[ ])|^get(?=[ ])|^set(?=[ ])|extends|class(?=[ ]?\w+[ ]?{)|typeof(?=[ ]?\()|else(?=[ ]?\{)|undefined(?=[ ])|\w+(?=[ ]?\:)|this(?!\w)|module(?=\.)|exports(?=[ ]?\=))/g
+			},
+			{
+				type : "scriptFunction",
+				name : "skycode_function",
+				reg : /(\w+(?=[ ]?\())/g
+			},
+			{
+				type : "scriptPunctuation",
+				name : "skycode_punctuation",
+				reg : /(\{|\}|\(|\)|\[|\]|\,|\.|\:|\;)/g
+			},
+			{
+				type : "scriptOperator",
+				name : "skycode_operator",
+				reg : /(\={1,3}(?!\>)|\&{1,2}|\|{1,2}|\<\=|\>\=|\+{1,2}\=?|\-{1,2}\=?|\?{1}|\=\>)/g
+			}
+		];
 		this.multiLineCommentOpen = false;
 	};
 	replaceCode(regItem, target){
@@ -35,5 +82,17 @@ module.exports = class ParserJS{
 			};
 		});
 		target.innerHTML = t;
+	};
+	parser(code){
+		if(code){
+			code.querySelectorAll("p").forEach((node, idx, arr) => {
+				if(node.nodeType == 1){
+					node.innerHTML = `<span class="skycode_script">${node.innerHTML}</span>`;
+					this.jsReg.forEach((reg, i, a) => {
+						this.replaceCode(reg, node.querySelector(".skycode_script"));
+					});
+				};
+			});
+		};
 	};
 };

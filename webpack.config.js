@@ -26,15 +26,17 @@ module.exports = (env, option) => {
 					}
 				}
 			]
-		}
+		},
+		plugins : [
+			new HtmlWebpackPlugin({
+				template : "./index.html",
+				filename : "../example/index.html",
+				inject : false
+			})
+		]
 	};
 	if(option.mode === "development"){
 		config.plugins = [
-			new HtmlWebpackPlugin({
-				template : "./index.html",
-				filename : "./index.html",
-				inject : false
-			}),
 			new webpack.HotModuleReplacementPlugin()
 		]
 	};
