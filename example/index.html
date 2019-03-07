@@ -5,30 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Sky-Code</title>
-<style>
-*{padding:0; margin:0;}
-.code-box{overflow:hidden; margin:20px 0; color:#333;}
-.code-box > div{overflow-x:auto; overflow-y:hidden; padding:10px 30px 10px 70px; background:#eee; border-left:5px solid #3f87a6; counter-reset:skycode;}
-.code-box code{font-family:Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;}
-.code-box code > p{position:relative; color:#333; line-height:180%;}
-.code-box code > p::before{position:absolute; left:-70px; top:0; width:40px; padding-right:10px; border-right:1px solid #999; text-align:right; color:#999; counter-increment:skycode; content:counter(skycode);}
-.code-box code .skycode_comment{color:#708090;}
-.code-box code .skycode_punctuation{color:#999;}
-.code-box code .skycode_operator{color:#a67f59;}
-.code-box code .skycode_doc{color:#ccc;}
-.code-box code .skycode_tag_name{color:#905;}
-.code-box code .skycode_attr_name{color:#690;}
-.code-box code .skycode_attr_value{color:#07a;}
-.code-box code .skycode_keyword, .code-box code .skycode_boolean{color:#07a;}
-.code-box code .skycode_function{color:#dd4a68;}
-.code-box code .skycode_string{color:#690;}
-.code-box code .skycode_string .skycode_number{color:#690;}
-.code-box code .skycode_number{color:#905;}
-.code-box code .skycode_selector{color:#690;}
-.code-box code .skycode_property{color:#905;}
-.code-box code .skycode_property_value{color:#333;}
-</style>
-</head>
+<link rel="stylesheet" href="../dist/skycode.css">
+<link href="../dist/skycode.css" rel="stylesheet"></head>
 
 <body>
 	<!-- html -->
@@ -146,7 +124,9 @@
 	</div>
 <script src="../dist/skycode.js"></script>
 <script>
-var s = new skyCode(".code-box");
+var s = new skyCode(".code-box", {
+	classPrefix : "skycode"
+});
 </script>
-</body>
+<script type="text/javascript" src="../dist/skycode.js"></script></body>
 </html>

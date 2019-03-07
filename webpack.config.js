@@ -2,6 +2,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env, option) => {
 	const config = {
@@ -24,6 +25,13 @@ module.exports = (env, option) => {
 							presets : ["@babel/preset-env"]
 						}
 					}
+				},
+				{
+					test : /\.css$/,
+					use: [
+						MiniCssExtractPlugin.loader,
+						"css-loader"
+					]
 				}
 			]
 		},
@@ -32,13 +40,16 @@ module.exports = (env, option) => {
 				template : "./index.html",
 				filename : "../example/index.html",
 				inject : false
+			}),
+			new MiniCssExtractPlugin({
+				filename: "skycode.css"
 			})
 		]
 	};
 	if(option.mode === "development"){
-		config.plugins = [
+		config.plugins.push(
 			new webpack.HotModuleReplacementPlugin()
-		]
+		);
 	};
 	return config;
 };

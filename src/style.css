@@ -1,0 +1,17 @@
+*{padding:0; margin:0;}
+.code-box{overflow:hidden; margin:20px 0; color:#333;}
+.code-box > div{overflow-x:auto; overflow-y:hidden; padding:10px 30px 10px 70px; background:#eee; border-left:5px solid #3f87a6; counter-reset:skycode;}
+.code-box code{font-family:Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;}
+.code-box code > p{position:relative; color:#333; line-height:180%;}
+.code-box code > p::before{position:absolute; left:-70px; top:0; width:40px; padding-right:10px; border-right:1px solid #999; text-align:right; color:#999; counter-increment:skycode; content:counter(skycode);}
+
+
+.skycode .skycode-comment{color:#708090;}
+.skycode .skycode-punctuation{color:#999;}
+.skycode .skycode-operator{color:#a67f59;}
+.skycode .skycode-doc{color:#ccc;}
+.skycode .skycode-function{color:#dd4a68;}
+.skycode .skycode-attr-name, .skycode .skycode-selector, .skycode .skycode-string, .skycode .skycode-string .skycode-number{color:#690;}
+.skycode .skycode-tag-name, .skycode .skycode-number, .skycode .skycode-property{color:#905;}
+.skycode .skycode-attr-value, .skycode .skycode-keyword, .skycode .skycode-boolean{color:#07a;}
+.skycode .skycode-property-value{color:#333;}

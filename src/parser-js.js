@@ -3,47 +3,47 @@ module.exports = class ParserJS{
 		this.jsReg = [
 			{
 				type : "multiLineComment",
-				name : "skycode_comment",
+				name : "comment",
 				reg : /(\/\*[^(?:\*\/)]*)|([^(?:\/\*)]*\*\/)/g
 			},
 			{
 				type : "singleLineComment",
-				name : "skycode_comment",
+				name : "comment",
 				reg : /(^\/{2}.*)\n?/g
 			},
 			{
 				type : "scriptString",
-				name : "skycode_string",
+				name : "string",
 				reg : /(\"([^\"]*?)\")/g
 			},
 			{
 				type : "scriptNumber",
-				name : "skycode_number",
+				name : "number",
 				reg : /(\d+|NaN)/g
 			},
 			{
 				type : "scriptBloolean",
-				name : "skycode_boolean",
+				name : "boolean",
 				reg : /(true|false)\w?/g
 			},
 			{
 				type : "scriptKeyword",
-				name : "skycode_keyword",
+				name : "keyword",
 				reg : /(^(?:\s|\t)?var(?= )|function(?=\()|^let(?=[ ])|^const(?=[ ])|^if(?=[ ]?\()|^forEach(?=[ ]?\()|^for(?=[ ]?\()|\$(?=\(|\.)|[ ]new(?=[ ])|^return(?=[ ])|^get(?=[ ])|^set(?=[ ])|extends|class(?=[ ]?\w+[ ]?{)|typeof(?=[ ]?\()|else(?=[ ]?\{)|undefined(?=[ ])|\w+(?=[ ]?\:)|this(?!\w)|module(?=\.)|exports(?=[ ]?\=))/g
 			},
 			{
 				type : "scriptFunction",
-				name : "skycode_function",
+				name : "function",
 				reg : /(\w+(?=[ ]?\())/g
 			},
 			{
 				type : "scriptPunctuation",
-				name : "skycode_punctuation",
+				name : "spunctuation",
 				reg : /(\{|\}|\(|\)|\[|\]|\,|\.|\:|\;)/g
 			},
 			{
 				type : "scriptOperator",
-				name : "skycode_operator",
+				name : "operator",
 				reg : /(\={1,3}(?!\>)|\&{1,2}|\|{1,2}|\<\=|\>\=|\+{1,2}\=?|\-{1,2}\=?|\?{1}|\=\>)/g
 			}
 		];
@@ -59,15 +59,15 @@ module.exports = class ParserJS{
 						if($1){
 							if(regItem.type === "multiLineComment"){
 								this.multiLineCommentOpen = true;
-								return `<span class="skycode_comment">${$1}</span>`;
+								return `<span class="${this.classPrefix}-comment">${$1}</span>`;
 							}else{
-								return `<span class="${regItem.name}">${$1}</span>`;
+								return `<span class="${this.classPrefix}-${regItem.name}">${$1}</span>`;
 							};
 						}else if($2){
 							if(regItem.type === "multiLineComment"){
 								if(this.multiLineCommentOpen){
 									this.multiLineCommentOpen = false;
-									return `<span class="skycode_comment">${$2}</span>`;
+									return `<span class="${this.classPrefix}-comment">${$2}</span>`;
 								}else{
 									return m;
 								};
@@ -75,7 +75,7 @@ module.exports = class ParserJS{
 						};
 					});
 				}else{
-					t += this.multiLineCommentOpen && regItem.type === "multiLineComment" ? `<span class="skycode_comment">${node.textContent}</span>` : node.textContent;
+					t += this.multiLineCommentOpen && regItem.type === "multiLineComment" ? `<span class="${this.classPrefix}-comment">${node.textContent}</span>` : node.textContent;
 				};
 			}else{
 				t += node.outerHTML;
@@ -83,13 +83,14 @@ module.exports = class ParserJS{
 		});
 		target.innerHTML = t;
 	};
-	parser(code){
+	parser(code, option){
 		if(code){
+			this.classPrefix = option.classPrefix;
 			code.querySelectorAll("p").forEach((node, idx, arr) => {
 				if(node.nodeType == 1){
-					node.innerHTML = `<span class="skycode_script">${node.innerHTML}</span>`;
+					node.innerHTML = `<span class="${this.classPrefix}">${node.innerHTML}</span>`;
 					this.jsReg.forEach((reg, i, a) => {
-						this.replaceCode(reg, node.querySelector(".skycode_script"));
+						this.replaceCode(reg, node.querySelector(`.${this.classPrefix}`));
 					});
 				};
 			});
